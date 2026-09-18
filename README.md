@@ -23,6 +23,14 @@ Benchmark
 Regression Test
 ```
 
+## Demo
+
+[![Agent Failure Lab](marketing/video/agent-failure-lab-poster.png)](marketing/video/agent-failure-lab.mp4)
+
+**▶ Watch the launch video** — a failed session becomes an autopsy,
+becomes a benchmark, becomes a passing regression suite (36 s, no audio
+needed).
+
 ## Why this exists
 
 Coding agents fail in repeatable ways: invented APIs, edits to the wrong
@@ -109,6 +117,21 @@ agentlab redact session.jsonl -o session.redacted.jsonl # scrub secrets
 ```
 
 Every command documents itself: `agentlab <command> --help`.
+
+## See it in action
+
+Agent Failure Lab takes a failed agent session and turns it into a reusable regression benchmark.
+
+▶ Watch the launch video above, or run it yourself:
+
+```bash
+agentlab analyze examples/sessions/demo.jsonl   # diagnose
+agentlab promote examples/sessions/demo.jsonl   # promote to benchmark
+agentlab run examples/custom-benchmark          # run verification
+agentlab run-suite .agentlab                    # regression suite
+```
+
+analyze → diagnose → promote → run.
 
 ## How it works
 
