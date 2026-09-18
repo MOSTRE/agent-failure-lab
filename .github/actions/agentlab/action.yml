@@ -45,7 +45,11 @@ runs:
 
     - name: Install Agent Failure Lab
       shell: bash
-      run: pip install "${{ github.action_path }}/../.."
+      run: |
+        # github.action_path can contain ./ and ../ segments, which pip
+        # rejects — canonicalize to the containing repository root first.
+        SRC="$(cd "${{ github.action_path }}/../.." && pwd)"
+        pip install "$SRC"
 
     - name: Run benchmark suite
       shell: bash
