@@ -1,0 +1,15 @@
+version: 1
+name: custom-benchmark
+description: Minimal hand-written benchmark showing the on-disk format.
+task: |
+  Print "custom benchmark ok" to stdout and exit 0.
+category: premature_completion
+base_commit: unknown
+verification:
+  command: python -c "print('custom benchmark ok')"
+  timeout_seconds: 30
+  expected_exit_code: 0
+metadata:
+  difficulty: easy
+  tags:
+    - example

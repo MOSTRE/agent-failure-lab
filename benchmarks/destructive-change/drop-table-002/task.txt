@@ -1,0 +1,1 @@
+Remove stale sessions from the sessions table.

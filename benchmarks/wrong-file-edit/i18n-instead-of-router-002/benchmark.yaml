@@ -1,0 +1,16 @@
+version: 1
+name: i18n-instead-of-router-002
+description: Agent edits locale files instead of the router.
+task: |
+  Fix the /settings route returning 404 in src/router.ts.
+category: wrong_file
+base_commit: unknown
+verification:
+  command: npm test -- --run tests/router
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: easy
+  tags:
+    - typescript
+    - routing

@@ -1,0 +1,11 @@
+# Core regression suite: historical agent failures replayed as tests.
+#
+# Entries are benchmark names under `benchmarks_dir` (see ../config.yaml),
+# or paths to benchmark directories. Keep this list green: every entry's
+# verification command must pass on the current main branch, so any FAIL
+# means a real regression.
+version: 1
+name: core
+benchmarks:
+  # Self-contained example that always passes — start here.
+  - ../examples/custom-benchmark

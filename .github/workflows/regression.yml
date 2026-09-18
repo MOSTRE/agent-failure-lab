@@ -1,0 +1,15 @@
+name: agent-regression
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  agent-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/agentlab
+        with:
+          suite: .agentlab

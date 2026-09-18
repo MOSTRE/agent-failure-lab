@@ -1,0 +1,26 @@
+name: New benchmark
+description: Contribute a failure-turned-benchmark
+body:
+  - type: input
+    attributes:
+      label: Benchmark name
+  - type: dropdown
+    attributes:
+      label: Failure category
+      options:
+        - hallucinated_api
+        - wrong_file
+        - ignored_existing_code
+        - ignored_test_failure
+        - missing_test_execution
+        - scope_creep
+        - requirement_misread
+        - destructive_change
+        - stale_context
+        - infinite_repair_loop
+        - partial_success
+        - premature_completion
+  - type: textarea
+    attributes:
+      label: Task and verification
+      description: Paste task.txt and the verification command.

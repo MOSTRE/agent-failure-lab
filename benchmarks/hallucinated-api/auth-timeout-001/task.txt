@@ -1,0 +1,1 @@
+Fix the authentication timeout in api/users.ts. Sessions expire but the lookup hangs for 60s.

@@ -1,0 +1,4 @@
+{"type": "message", "role": "user", "content": "Fix it"}
+{"type": "tool_call", "tool": "read_file", "input": {"path": "a.py"}}
+{ this is not json
+{"type": "tool_result", "output": "ok"}

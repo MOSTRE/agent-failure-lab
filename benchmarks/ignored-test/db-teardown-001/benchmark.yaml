@@ -1,0 +1,16 @@
+version: 1
+name: db-teardown-001
+description: Agent sees teardown failure, then refactors unrelated checkout code without addressing it.
+task: |
+  Fix flaky orders test by isolating DB state in tests/test_orders.py.
+category: ignored_test_failure
+base_commit: unknown
+verification:
+  command: pytest tests/test_orders.py -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: medium
+  tags:
+    - python
+    - testing

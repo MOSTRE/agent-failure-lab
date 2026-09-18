@@ -1,0 +1,16 @@
+version: 1
+name: config-instead-of-auth-001
+description: Agent edits src/billing/invoice.ts instead of the login module.
+task: |
+  Fix the login redirect in src/auth/login.ts so users land on /dashboard.
+category: wrong_file
+base_commit: unknown
+verification:
+  command: pytest tests/test_login.py -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: easy
+  tags:
+    - typescript
+    - auth

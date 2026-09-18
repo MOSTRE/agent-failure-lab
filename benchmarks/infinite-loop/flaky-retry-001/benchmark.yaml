@@ -1,0 +1,16 @@
+version: 1
+name: flaky-retry-001
+description: Agent repeats edit -> same failing signature check 5 times.
+task: |
+  Fix the payment webhook handler rejecting valid signatures.
+category: infinite_repair_loop
+base_commit: unknown
+verification:
+  command: pytest tests/test_webhook.py -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: hard
+  tags:
+    - python
+    - payments

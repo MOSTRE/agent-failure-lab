@@ -1,0 +1,1 @@
+Fix the /settings route returning 404 in src/router.ts.

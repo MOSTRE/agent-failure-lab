@@ -1,0 +1,16 @@
+version: 1
+name: pagination-cursor-002
+description: Agent calls db.fetchPageAfter() which does not exist; the helper is db.fetchPage().
+task: |
+  Fix cursor pagination in api/list.ts; the second page repeats the first page.
+category: hallucinated_api
+base_commit: unknown
+verification:
+  command: pytest tests/test_pagination.py -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: medium
+  tags:
+    - typescript
+    - api

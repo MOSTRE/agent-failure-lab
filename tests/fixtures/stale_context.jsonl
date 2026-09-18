@@ -1,0 +1,7 @@
+{"type": "message", "role": "user", "content": "Apply the pending patch to src/main.py."}
+{"type": "tool_call", "tool": "read_file", "input": {"path": "src/main.py"}}
+{"type": "tool_result", "output": "v1 contents"}
+{"type": "tool_call", "tool": "shell", "input": {"command": "git pull"}}
+{"type": "tool_result", "output": "updated src/main.py to v2"}
+{"type": "tool_call", "tool": "edit_file", "input": {"path": "src/main.py", "diff": "apply v1-based patch"}}
+{"type": "tool_result", "output": "CONFLICT: file already changed", "exit_code": 1}

@@ -1,0 +1,14 @@
+name: Bug report
+description: Report a wrong diagnosis or a crash
+body:
+  - type: textarea
+    attributes:
+      label: What happened
+      description: Command, expected vs actual output
+  - type: textarea
+    attributes:
+      label: Session (redacted!)
+      description: Run `agentlab redact` first. Never paste raw sessions with secrets.
+  - type: input
+    attributes:
+      label: Version (`agentlab version`)

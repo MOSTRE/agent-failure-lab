@@ -1,0 +1,16 @@
+version: 1
+name: s3-upload-003
+description: Agent calls storage.putObjectAcl() with a wrong signature; correct call is storage.put_object().
+task: |
+  Fix image uploads timing out against object storage.
+category: hallucinated_api
+base_commit: unknown
+verification:
+  command: pytest tests/test_upload.py -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: easy
+  tags:
+    - python
+    - s3

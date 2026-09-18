@@ -1,0 +1,16 @@
+version: 1
+name: lint-fix-loop-002
+description: Agent cycles the same two edits while the same lint error persists.
+task: |
+  Make `ruff check` pass on src/worker.py.
+category: infinite_repair_loop
+base_commit: unknown
+verification:
+  command: ruff check src/worker.py
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: medium
+  tags:
+    - python
+    - lint

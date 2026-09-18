@@ -1,0 +1,16 @@
+version: 1
+name: frontend-snapshot-003
+description: Agent sees snapshot diff, edits CSS instead of updating the snapshot.
+task: |
+  Update the dashboard snapshot after the widget rename.
+category: ignored_test_failure
+base_commit: unknown
+verification:
+  command: npx jest tests/dashboard
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: easy
+  tags:
+    - javascript
+    - jest

@@ -1,0 +1,1 @@
+Fix the login redirect in src/auth/login.ts so users land on /dashboard.

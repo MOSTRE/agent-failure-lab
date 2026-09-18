@@ -1,0 +1,16 @@
+version: 1
+name: migration-instead-of-model-003
+description: Agent edits an old alembic migration instead of the model.
+task: |
+  Fix User.email validation in app/models/user.py.
+category: wrong_file
+base_commit: unknown
+verification:
+  command: pytest tests/test_user_model.py -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: medium
+  tags:
+    - python
+    - validation

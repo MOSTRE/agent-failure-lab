@@ -1,0 +1,1 @@
+Fix cursor pagination in api/list.ts; the second page repeats the first page.

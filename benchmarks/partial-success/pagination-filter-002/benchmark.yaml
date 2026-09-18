@@ -1,0 +1,16 @@
+version: 1
+name: pagination-filter-002
+description: Agent fixes pagination; the filter still returns everything.
+task: |
+  Fix pagination AND the status filter on /orders.
+category: partial_success
+base_commit: unknown
+verification:
+  command: pytest tests/test_orders_page.py -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: medium
+  tags:
+    - python
+    - api

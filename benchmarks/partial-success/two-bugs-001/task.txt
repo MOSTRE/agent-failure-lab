@@ -1,0 +1,1 @@
+Fix both the login redirect and the logout 500 in src/auth.

@@ -1,0 +1,68 @@
+name: Agent Failure Lab
+description: Run historical agent-failure benchmarks as regression tests.
+author: Agent Failure Lab Contributors
+branding:
+  icon: activity
+  color: red
+
+inputs:
+  suite:
+    description: Suite file, .agentlab/ directory, or benchmarks directory to run.
+    required: false
+    default: .agentlab
+  benchmarks-dir:
+    description: Benchmarks root used to resolve suite names.
+    required: false
+    default: benchmarks
+  agent:
+    description: Agent label recorded with each result (verification only; no external agents are executed).
+    required: false
+    default: manual
+  python-version:
+    description: Python version for setup-python.
+    required: false
+    default: "3.12"
+  working-directory:
+    description: Directory to run the suite in (repository root by default).
+    required: false
+    default: .
+  summary-file:
+    description: Where to write the Markdown summary table (uploaded or posted as a PR comment by your own steps).
+    required: false
+    default: agentlab-summary.md
+  pr-comment:
+    description: Post the summary as a PR comment with `gh` when running on pull_request (needs contents+pull-requests write permission).
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Install Agent Failure Lab
+      shell: bash
+      run: pip install "${{ github.action_path }}/../.."
+
+    - name: Run benchmark suite
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        agentlab run-suite "${{ inputs.suite }}" \
+          --dir "${{ inputs.benchmarks-dir }}" \
+          --agent "${{ inputs.agent }}" \
+          --format github \
+          --summary-out "${{ inputs.summary-file }}"
+
+    - name: Comment summary on PR
+      if: inputs.pr-comment == 'true' && github.event_name == 'pull_request'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh pr comment "${{ github.event.pull_request.number }}" \
+          --body-file "${{ inputs.summary-file }}"

@@ -1,0 +1,15 @@
+# Agent Failure Lab — repository suite configuration.
+#
+# Copy this directory into your own repository, point `benchmarks_dir` at
+# the benchmarks you curate, and list them in `suites/`. Then gate pull
+# requests with `agentlab run-suite .agentlab --format github`.
+version: 1
+
+# Directory holding benchmark/ directories (each with a benchmark.yaml).
+# Resolved relative to the repository root.
+benchmarks_dir: benchmarks
+
+# Named suites. Each file lists benchmark names (resolved against
+# benchmarks_dir) or paths to benchmark directories.
+suites:
+  core: suites/core.yaml

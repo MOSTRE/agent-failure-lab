@@ -1,0 +1,16 @@
+version: 1
+name: auth-assertion-002
+description: Agent watches the expiry assertion fail, then restyles logging and never revisits the assertion.
+task: |
+  Make test_session_expiry pass in tests/auth.
+category: ignored_test_failure
+base_commit: unknown
+verification:
+  command: pytest tests/auth -q
+  timeout_seconds: 120
+  expected_exit_code: 0
+metadata:
+  difficulty: medium
+  tags:
+    - python
+    - auth

@@ -1,0 +1,1 @@
+Fix the checkout total rounding to 2 decimals.

@@ -1,0 +1,1 @@
+Fix the CSV export encoding (UTF-8 with BOM).

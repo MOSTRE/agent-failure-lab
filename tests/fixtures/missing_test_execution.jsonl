@@ -1,0 +1,4 @@
+{"type": "message", "role": "user", "content": "Fix the retry helper so it backs off correctly."}
+{"type": "tool_call", "tool": "edit_file", "input": {"path": "src/main.py", "diff": "fix"}}
+{"type": "tool_result", "output": "edited src/main.py"}
+{"type": "message", "role": "assistant", "content": "Here is the change for review."}

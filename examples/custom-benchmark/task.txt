@@ -1,0 +1,1 @@
+Print "custom benchmark ok" to stdout and exit 0.
