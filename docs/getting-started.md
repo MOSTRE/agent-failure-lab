@@ -6,7 +6,7 @@ The whole workflow runs locally — no API keys, no uploads.
 ## Install
 
 ```bash
-git clone https://github.com/your-org/agent-failure-lab
+git clone https://github.com/MOSTRE/agent-failure-lab
 cd agent-failure-lab
 python -m venv .venv
 # Windows: .venv\Scripts\activate | macOS/Linux: source .venv/bin/activate

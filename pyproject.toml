@@ -29,6 +29,12 @@ html = []
 [project.scripts]
 agentlab = "agentlab.cli:app"
 
+[project.urls]
+Homepage = "https://github.com/MOSTRE/agent-failure-lab"
+Repository = "https://github.com/MOSTRE/agent-failure-lab"
+Issues = "https://github.com/MOSTRE/agent-failure-lab/issues"
+Changelog = "https://github.com/MOSTRE/agent-failure-lab/blob/main/CHANGELOG.md"
+
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
