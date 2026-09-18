@@ -164,7 +164,7 @@ Run your suite on every pull request with the local action (no
 marketplace needed — pin the tag):
 
 ```yaml
-- uses: MOSTRE/agent-failure-lab/.github/actions/agentlab@v0.1.0
+- uses: MOSTRE/agent-failure-lab/.github/actions/agentlab@v0.1.1
   with:
     suite: .agentlab
 ```

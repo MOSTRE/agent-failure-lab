@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- Fix the bundled GitHub Action's install path (it resolved one directory
+  level short of the repository root, so the action step failed before
+  running any benchmark)
+
 ## 0.1.0 — Initial public release
 
 - Analyze agent trajectories (`analyze`, `diagnose`, `inspect`)

@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: MOSTRE/agent-failure-lab/.github/actions/agentlab@v0.1.0
+      - uses: MOSTRE/agent-failure-lab/.github/actions/agentlab@v0.1.1
         with:
           suite: .agentlab
 ```
@@ -34,7 +34,7 @@ jobs:
 With inputs:
 
 ```yaml
-      - uses: MOSTRE/agent-failure-lab/.github/actions/agentlab@v0.1.0
+      - uses: MOSTRE/agent-failure-lab/.github/actions/agentlab@v0.1.1
         with:
           suite: .agentlab
           benchmarks-dir: benchmarks
@@ -45,7 +45,7 @@ With inputs:
 Notes:
 
 - The action installs Agent Failure Lab from its own pinned checkout, so
-  no marketplace publication is needed — pin `@v0.1.0` (or a commit SHA).
+  no marketplace publication is needed — pin `@v0.1.1` (or a commit SHA).
 - Each benchmark runs its `verification.command` in an isolated copy.
   No external agents are executed; `agent` is just the recorded label.
 - The step exits non-zero on any FAIL, so it gates the PR. Benchmarks
